@@ -1,0 +1,25 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  height: 120px;
+  width: 100%;
+  background: #4056A1;
+  color: #FFFFFF;
+  padding: 0 1.5em;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+}
+
+nav span {
+  text-align: center;
+}
+
+nav span.logo {
+  font-family: 'Bungee', sans-serif;
+  font-size: larger;
+}
+
+nav span.slogon {
+  margin-right: 3em;
+}
