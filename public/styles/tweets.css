@@ -1,0 +1,44 @@
+article.tweet {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #000000;
+}
+
+article.tweet:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+article.tweet header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2em;
+}
+
+article.tweet .user-info {
+  display: flex;
+  align-items: center;
+}
+
+article.tweet .tweet-username {
+  margin-left: 10%;
+}
+
+article.tweet .content {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 0 2em;
+}
+
+article.tweet p.content-text {
+  border-bottom: 3px black solid;
+
+}
+
+article.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 2em;
+}

@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  console.log("let's rock");
   const textarea = $('.new-tweet form textarea');
   textarea.on('input', function(event) {
     const textareaValue = $(this).val();
