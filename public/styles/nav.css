@@ -1,6 +1,8 @@
 nav {
   display: flex;
   flex-direction: row;
+  top:0;
+  left:0;
   height: 120px;
   width: 100%;
   background: #4056A1;
@@ -15,11 +17,11 @@ nav span {
   text-align: center;
 }
 
-nav span.logo {
+nav .logo {
   font-family: 'Bungee', sans-serif;
   font-size: larger;
 }
 
-nav span.slogon {
+nav .slogon {
   margin-right: 3em;
 }

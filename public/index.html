@@ -27,7 +27,9 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -40,21 +42,25 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span class="logo">TWEETER</span>
-    <span class="slogon">Write a new tweeter
-      <br><i class="fa-solid fa-angles-down" style="color:red"></i></span>
+    <div class="slogon">
+      <span >Write a new tweeter
+        <br><i class="fa-solid fa-angles-down" style="color:red"></i></span>
+    </div>
   </nav>
   <header>
     <div>
       <img src="/images/profile-hex.png">
-    </div>
-    <div>
       <h2>Ryan Reynolds</h2>
     </div>
   </header>
   <!-- Page-specific (main) content here -->
   <main class="container" id="tweets-container">
+    <section class="error-message-hide" id="error-message">
+      <i class="fa-solid fa-triangle-exclamation" style="color: #c41720;"></i>
+      Too long. Plz rspct our arbitrary limit of 140 chars.
+      <i class="fa-solid fa-triangle-exclamation" style="color: #c41720;"></i>
+    </section>
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
       <form>
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>

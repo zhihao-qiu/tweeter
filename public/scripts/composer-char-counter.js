@@ -5,7 +5,7 @@ $(document).ready(function() {
     const textareaLength = 140 - textareaValue.length;
 
     const counter = $(this).parent().find('.counter');
-    counter.text(Math.abs(textareaLength));
+    counter.text(textareaLength);
 
     if (textareaLength < 0 && counter.css('color') !== 'rgb(255, 0, 0)') {
       counter.css('color', 'red');

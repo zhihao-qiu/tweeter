@@ -1,5 +1,6 @@
 .new-tweet {
   width: 100%;
+  margin-top: 20px;
 }
 
 .new-tweet form {
@@ -12,6 +13,7 @@
   font-family: 'Source Sans Pro', sans-serif;
   font-size: larger;
   align-self: flex-start;
+  margin-bottom: 10px;
 }
 
 .new-tweet button {
@@ -29,7 +31,7 @@
   font-size: smaller;
   font-weight: bold;
   line-height: normal;
-  height: 2.2em;
+  height: 2.5em;
 }
 
 .new-tweet div {
@@ -40,3 +42,21 @@
   font-size: smaller;
 }
 
+.error-message-hide {
+  border: 3px solid red;
+  width: 100%;
+  padding: 0.5vw;
+  transform: translateY(0%);
+  transition-timing-function: ease-in;
+  transition: 1s;
+  opacity: 0;
+}
+
+.error-message-show {
+  width: 100%;
+  transition: 1s;
+  transition-timing-function: ease-out;
+
+  transform: translateY(50%);
+  opacity: 1;
+}
