@@ -1,17 +1,19 @@
 "use strict";
 
 // Basic express setup:
-
+const morgan = require('morgan');
 const PORT = 8080;
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 
+app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // The in-memory database of tweets. It's a basic object with an array in it.
 const db = require("./lib/in-memory-db");
+const dataHelpers = require('./lib/data-helpers.js');
 
 // The `data-helpers` module provides an interface to the database of tweets.
 // This simple interface layer has a big benefit: we could switch out the
@@ -33,15 +35,7 @@ const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 app.use("/tweets", tweetsRoutes);
 
 app.post("/tweets/", (req, res) => {
-  res.send('start');
-  // let tweet_content = {};
-  // tweet_content["text"] = req.body.text;
-  // console.log(content);
-  // db.tweets[db.tweets.length + 1].user = { user };
-  // db.tweets[db.tweets.length + 1].content = { content };
-  // db.tweets[db.tweets.length + 1].created_at = Date(now());
-
-  // res.redirect(`/tweets/`);
+  DataHelpers.saveTweet(req.body.data, (err) => { console.log(err); });
 });
 
 

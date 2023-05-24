@@ -27,6 +27,7 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -51,10 +52,10 @@
     </div>
   </header>
   <!-- Page-specific (main) content here -->
-  <main class="container">
+  <main class="container" id="tweets-container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form method="POST" action="/tweets/">
+      <form>
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
         <div>
@@ -63,62 +64,7 @@
         </div>
       </form>
     </section>
-    <br>
-    <article class="tweet">
-      <header>
-        <!-- Title and user information -->
-        <div class="user-info">
-          <img src="/images/boys.png" style="width:60px;height:60px">
-          <h3 class="tweet-username">Newton</h3>
-        </div>
-        <span>@MrJohn</span>
-      </header>
-      <div class="content">
-        <!-- Tweet content text -->
-        <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet augue eget sapien
-          lobortis, at ultricies metus efficitur. Nulla auctor quam sit amet est aliquam bibendum.</p>
-      </div>
-      <footer>
-        <!-- Footer information and icons -->
-        <div class="footer-date">
-          <span class="tweet-date">May 20, 2023</span>
-        </div>
-        <div class="tweet-icons">
-          <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-retweet"></i>
-          <i class="fa-solid fa-heart"></i>
-        </div>
-
-      </footer>
-    </article>
-    <br>
-    <article class="tweet">
-      <header>
-        <!-- Title and user information -->
-        <div class="user-info">
-          <img src="/images/girls.png" style="width:60px;height:60px">
-          <h3 class="tweet-username">Newton</h3>
-        </div>
-        <span>@MrJohn</span>
-      </header>
-      <div class="content">
-        <!-- Tweet content text -->
-        <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet augue eget sapien
-          lobortis, at ultricies metus efficitur. Nulla auctor quam sit amet est aliquam bibendum.</p>
-      </div>
-      <footer>
-        <!-- Footer information and icons -->
-        <div class="footer-date">
-          <span class="tweet-date">May 20, 2023</span>
-        </div>
-        <div class="tweet-icons">
-          <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-retweet"></i>
-          <i class="fa-solid fa-heart"></i>
-        </div>
-
-      </footer>
-    </article>
+    <section class="tweets-list"></section>
   </main>
 </body>
 
