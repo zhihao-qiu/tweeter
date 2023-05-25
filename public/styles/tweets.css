@@ -13,11 +13,11 @@ article.tweet:hover {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-article.tweet header {
+article.tweet>header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2em;
+  padding: 0 1em;
 }
 
 article.tweet .user-info {
@@ -26,7 +26,21 @@ article.tweet .user-info {
 }
 
 article.tweet .tweet-username {
-  margin-left: 10%;
+  font-size: smaller;
+  width: 10em;
+  text-align: start;
+  padding: 0 1em;
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+}
+
+.tweet-handle {
+  font-size:large;
+  font-weight: bold;
+  color: rgb(129, 129, 173);
 }
 
 article.tweet .content {
@@ -40,12 +54,31 @@ article.tweet p.content-text {
   border-bottom: 3px black solid;
   flex-grow: 1;
   margin: 0 auto;
-  height: 5dvh;
+  /* height: 5dvh; */
+  font-size: smaller;
+  font-weight: bold;
+  overflow-wrap: break-word;
+  overflow: hidden;
 }
 
 article.tweet footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 10px 2em;
+  padding: 0 1em;
+  align-items: flex-start;
+}
+
+.tweet-date {
+  font-size: small;
+  font-weight: bold;
+}
+
+.tweet-icons i:hover {
+  color: orange;
+}
+
+.tweet-icons i{
+  font-size: medium;
+  color: #4056A1;
 }

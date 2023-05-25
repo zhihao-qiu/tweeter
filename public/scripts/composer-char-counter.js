@@ -1,8 +1,9 @@
 $(document).ready(function() {
   const textarea = $('.new-tweet form textarea');
+  const maxLengthOfTweet = 140;
   textarea.on('input', function(event) {
     const textareaValue = $(this).val();
-    const textareaLength = 140 - textareaValue.length;
+    const textareaLength = maxLengthOfTweet - textareaValue.length;
 
     const counter = $(this).parent().find('.counter');
     counter.text(textareaLength);

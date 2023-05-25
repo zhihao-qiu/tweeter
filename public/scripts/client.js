@@ -24,10 +24,10 @@ const createTweetElement = function(tweet) {
     <article class="tweet">
       <header>
         <div class="user-info">
-          <img src="${tweet.user.avatars}" style="width:60px;height:60px">
+          <img src="${tweet.user.avatars}">
           <h3 class="tweet-username">${tweet.user.name}</h3>
         </div>
-        <span>${tweet.user.handle}</span>
+        <span class="tweet-handle">${tweet.user.handle}</span>
       </header>
       <div class="content">
         <!-- Tweet content text -->
@@ -105,7 +105,7 @@ $(document).ready(function() {
     }).then((data) => {
       errorMessage.classList.remove('error-message-show');
       $('#tweet-text').val('');
-      console.log(data);
+      $('.counter').val(maxLengthOfTweet);
       fetechTweets();
 
     }).catch((error) => {
@@ -118,19 +118,17 @@ $(document).ready(function() {
     });
   });
 
-
-  const newTweetBtn = document.querySelector('.new-tweet button');
-  $(newTweetBtn).mouseenter(function(event) {
+  $('.new-tweet button').mouseenter(function(event) {
     $(this).css('cursor', 'pointer');
     $(this).css({ 'box-shadow': '0 0 10px rgba(0, 0, 255, 0.5)' });
   });
 
-  $(newTweetBtn).mouseleave(function(event) {
+  $('.new-tweet button').mouseleave(function(event) {
     $(this).css('cursor', 'default');
     $(this).css({ 'box-shadow': 'none' });
   });
 
-
+  $('.tweet-icons i').off('mouseenter mouseleave');
   const slogonLink = document.querySelector('.slogon');
   $(slogonLink).mouseenter(function(event) {
     $(this).css('cursor', 'pointer');
@@ -141,6 +139,29 @@ $(document).ready(function() {
   });
 
   $(slogonLink).on('click', () => {
-    $('#tweet-text').focus();
+    const composedTweeet = document.getElementById('new_tweet');
+
+    if (composedTweeet.classList.contains('new-tweet')) {
+      composedTweeet.classList.add('new-tweet-hide');
+console.log('1')
+      composedTweeet.addEventListener('animationend', () => {
+        composedTweeet.classList.remove('new-tweet-hide');
+        composedTweeet.classList.remove('new-tweet');
+        composedTweeet.classList.add('new-tweet-hidden');
+      });
+
+    } else {
+      composedTweeet.classList.add('new-tweet');
+      
+      composedTweeet.classList.add('new-tweet-show');
+      
+      composedTweeet.addEventListener('animationend', () => {
+        composedTweeet.classList.remove('new-tweet-show');
+        composedTweeet.classList.remove('new-tweet-hidden');
+        composedTweeet.classList.add('new-tweet');
+      });
+
+      $('#tweet-text').focus();
+    };
   });
 });

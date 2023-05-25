@@ -4,6 +4,7 @@
 <head>
 
   <!-- Meta Information -->
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
   <title>Tweeter - Home Page</title>
 
   <!-- External CSS -->
@@ -21,6 +22,7 @@
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
   <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/back-to-top.css" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -34,21 +36,21 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  <script type="text/javascript" src="/scripts/operation-icons.js"></script>
   <script type="text/javascript" src="/scripts/composer.js"></script>
   <meta http-equiv="Content-Type" content="application/x-www-form-urlencoded">
 </head>
 
 <body>
   <!-- Top nav bar (fixed) -->
-  <nav>
+  <nav class="nav">
     <span class="logo">TWEETER</span>
     <div class="slogon" id="slogon">
       <span >Write a new tweeter
-        <br><i class="fa-solid fa-angles-down" style="color:red"></i></span>
+        <br><i class="fa-solid fa-angles-down icon_newtweet"></i></span>
     </div>
   </nav>
-  <header>
+  <div></div>
+  <header class="header">
     <div>
       <img src="/images/profile-hex.png">
       <h2>Ryan Reynolds</h2>
@@ -61,10 +63,9 @@
       Too long. Plz rspct our arbitrary limit of 140 chars.
       <i class="fa-solid fa-triangle-exclamation" style="color: #c41720;"></i>
     </section>
-    <section class="new-tweet">
+    <section class="new-tweet" id="new_tweet">
       <form>
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
+        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         <div>
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
