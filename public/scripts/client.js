@@ -4,8 +4,17 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+/* `const maxLengthOfTweet = 140;` is declaring a constant variable `maxLengthOfTweet` and assigning it
+a value of 140. This variable is used to set the maximum length of characters allowed in a tweet. */
 const maxLengthOfTweet = 140;
 
+/**
+ * The function renders a list of tweets by looping through them, calling a helper function to create
+ * the HTML elements for each tweet, and appending them to a container.
+ * @param tweets - The `tweets` parameter is an array of objects, where each object represents a tweet.
+ * The `renderTweets` function loops through this array and calls the `createTweetElement` function for
+ * each tweet object. It then takes the returned jQuery object and appends it to the `.tweets-list`
+ */
 const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
@@ -18,6 +27,16 @@ const renderTweets = function(tweets) {
   }
 };
 
+/**
+ * The function creates a tweet element using a template literal and returns it.
+ * @param tweet - The tweet parameter is an object that contains information about a single tweet,
+ * including the user who posted it, the content of the tweet, and the date it was created. The
+ * function uses this information to create an HTML element that displays the tweet on a webpage.
+ * @returns The function `createTweetElement` returns a string that represents the HTML markup for a
+ * tweet article element. The string includes the user's avatar, name, handle, tweet content, date, and
+ * icons for flagging, retweeting, and liking the tweet. The tweet content is escaped to prevent
+ * cross-site scripting (XSS) attacks.
+ */
 const createTweetElement = function(tweet) {
   let $tweet = `
   <br>
@@ -51,6 +70,9 @@ const createTweetElement = function(tweet) {
   return $tweet;
 };
 
+/**
+ * This function fetches tweets data from a server and renders it on the webpage.
+ */
 const fetechTweets = () => {
   $.ajax({
     url: 'http://localhost:8080/tweets/',
@@ -61,12 +83,25 @@ const fetechTweets = () => {
   });
 };
 
+/**
+ * The function "escape" converts special characters in a string to their corresponding HTML entities.
+ * @param str - The `str` parameter is a string that needs to be escaped to prevent any potential
+ * security vulnerabilities when it is used in HTML or JavaScript code. The `escape` function creates a
+ * new `div` element, sets its text content to the `str` parameter, and returns the HTML-encoded
+ * version of
+ * @returns The function `escape` returns a string that has been converted to HTML entities.
+ * Specifically, it creates a new `div` element, sets its text content to the input `str`, and then
+ * returns the `innerHTML` of the `div` element, which will have any special characters replaced with
+ * their corresponding HTML entities.
+ */
 const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+/* The code is using jQuery's `$(document).ready()` function to execute a series of event listeners and
+functions once the DOM has finished loading. */
 $(document).ready(function() {
 
   fetechTweets();

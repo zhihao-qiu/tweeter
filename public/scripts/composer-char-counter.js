@@ -1,3 +1,7 @@
+/* This code is setting up an event listener for when the document is ready. When the document is
+ready, it selects the textarea element within the form with class "new-tweet", sets the maximum
+length of the tweet to 140 characters, and sets up an event listener for when the user inputs text
+into the textarea. */
 $(document).ready(function() {
   const textarea = $('.new-tweet form textarea');
   const maxLengthOfTweet = 140;
